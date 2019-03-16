@@ -35,8 +35,8 @@ public class exit extends AppCompatActivity {
                 String str,end,star;
                 //str=getcurrectTime();
 
-                str="sai";
-                check(vcn,str);
+                str="19:15:22";
+                //check(vcn,str);
                 star=getStartTime(vcn);
                 end=str;
                 //int type=getVehicleType(vcn);

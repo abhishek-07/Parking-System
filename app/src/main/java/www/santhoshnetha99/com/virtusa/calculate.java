@@ -17,7 +17,7 @@ public class calculate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
-        /*
+
       Intent intent=getIntent();
         String start=intent.getStringExtra("starttime");
         String end=intent.getStringExtra("endtime");
@@ -46,6 +46,6 @@ public class calculate extends AppCompatActivity {
         txt1.setText(start);
         txt2.setText(end);
         txt3.setText(hours*type);
-        */
+
     }
 }

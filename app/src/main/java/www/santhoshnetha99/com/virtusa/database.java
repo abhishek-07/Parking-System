@@ -12,7 +12,7 @@ public class database extends SQLiteOpenHelper {
 
     private final String SQL_CREATE_TABLE
             = "CREATE TABLE " + tableschema.TABLE_NAME
-            + " (" + tableschema._ID + " INTEGER NOT NULL , "//ts09ju8899
+            + " (" + tableschema._ID + " INTEGER NOT NULL , "
             + tableschema.IN_TIME + " TEXT NOT NULL, "
             + tableschema.VECHILE_TYPE + " INTEGER NOT NULL, "
             + tableschema.OUT_TIME+ " TEXT, "
