@@ -12,10 +12,11 @@ public class database extends SQLiteOpenHelper {
 
     private final String SQL_CREATE_TABLE
             = "CREATE TABLE " + tableschema.TABLE_NAME
-            + " (" + tableschema._ID + " INTEGER PRIMARY KEY , "
+            + " (" + tableschema._ID + " INTEGER NOT NULL , "//ts09ju8899
             + tableschema.IN_TIME + " TEXT NOT NULL, "
             + tableschema.VECHILE_TYPE + " INTEGER NOT NULL, "
-            + tableschema.SPACE_TAKEN+" INTEGER NOT NULL "+");";
+            + tableschema.OUT_TIME+ " TEXT, "
+            + tableschema.SPACE_TAKEN+" INTEGER NOT NULL);";
 
     public database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

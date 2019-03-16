@@ -9,11 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    public TextView carno;
-    public TextView intime;
-    public TextView vechiletype;
+    public EditText carno;
+    public EditText intime;
+    public EditText vechiletype;
 
     Button bt1;
     private SQLiteDatabase database;
@@ -25,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         carno=(EditText)findViewById(R.id.carno);
-        intime=(EditText)findViewById(R.id.intime);
         vechiletype=(EditText)findViewById(R.id.vechiletype);
 
         bt1=(Button)findViewById(R.id.bt1);
@@ -36,22 +39,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int spacetaken;
                 String carno1 	= carno.getText().toString();
-                String intime1= intime.getText().toString();
                 int vechiletype1=Integer.parseInt(vechiletype.getText().toString());
                 if (vechiletype1==4)
                     spacetaken=1;
                 else
                     spacetaken=4;
-
+                String str=getcurrectTime();
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(tableschema._ID, carno1);
-                contentValues.put(tableschema.IN_TIME, intime1);
+                contentValues.put(tableschema.IN_TIME, str);
                 contentValues.put(tableschema.VECHILE_TYPE, vechiletype1);
                 contentValues.put(tableschema.SPACE_TAKEN, spacetaken);
 
 
                 long rowId = database.insert(tableschema.TABLE_NAME,null, contentValues);
                 Log.v("check", "data acquired");
+                Toast.makeText(MainActivity.this, "Data Acquired",Toast.LENGTH_SHORT).show();
 
 
             }
@@ -60,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public String getcurrectTime(){
+        Calendar calendar=Calendar.getInstance();
+        SimpleDateFormat mdformat=new SimpleDateFormat("HH:MM:SS");
+        String strDate=mdformat.format(calendar.getTime());
+        return strDate;
     }
 }

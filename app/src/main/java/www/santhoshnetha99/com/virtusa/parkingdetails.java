@@ -16,6 +16,7 @@ public class parkingdetails {
         public static final String IN_TIME = "intime";
         public static final String VECHILE_TYPE = "vechiletype";
         public static final String SPACE_TAKEN="spacetaken";
+        public static final String OUT_TIME="outtime";
 
     }
 
