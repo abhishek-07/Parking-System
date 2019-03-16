@@ -4,23 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/carno"/>
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/carno"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/intime"/>
-    <TextView
-        android:layout_width="wrap_content"
+        android:hint="CAR NUMBER"
+        android:textColorHint="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/intime"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vechiletype"/>
+        android:hint="Check-InTime"
+        android:textColorHint="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/vechiletype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Vehicle type"
+        android:textColorHint="@color/colorPrimary" />
+
+
     <Button
+        android:id="@+id/bt1"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bt1"/>
+        android:layout_gravity="center|top"
+        android:text="@string/submit" />
 
 </LinearLayout>

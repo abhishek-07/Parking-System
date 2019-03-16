@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        carno=(TextView)findViewById(R.id.carno);
-        intime=(TextView)findViewById(R.id.intime);
-        vechiletype=(TextView)findViewById(R.id.vechiletype);
+        carno=(EditText)findViewById(R.id.carno);
+        intime=(EditText)findViewById(R.id.intime);
+        vechiletype=(EditText)findViewById(R.id.vechiletype);
 
         bt1=(Button)findViewById(R.id.bt1);
         databaseHelper = new database(MainActivity.this);
@@ -50,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                 long rowId = database.insert(tableschema.TABLE_NAME,null, contentValues);
+                Log.v("check", "data acquired");
 
 
             }
         });
+
 
 
 
