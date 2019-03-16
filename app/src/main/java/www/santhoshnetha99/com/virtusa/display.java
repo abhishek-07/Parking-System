@@ -23,7 +23,7 @@ public class display extends AppCompatActivity {
 
 class CustomAdapter extends BaseAdapter {
     private Context mContext;
-    database controld;
+    database controld1;
     SQLiteDatabase db;
     private ArrayList<String> _ID = new ArrayList<String>();
     private ArrayList<String> IN_TIME = new ArrayList<String>();
