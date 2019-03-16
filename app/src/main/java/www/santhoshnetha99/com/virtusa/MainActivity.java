@@ -45,16 +45,17 @@ public class MainActivity extends AppCompatActivity {
                 else
                     spacetaken=4;
                 String str=getcurrectTime();
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(tableschema._ID, carno1);
-                contentValues.put(tableschema.IN_TIME, str);
-                contentValues.put(tableschema.VECHILE_TYPE, vechiletype1);
-                contentValues.put(tableschema.SPACE_TAKEN, spacetaken);
+                ContentValues contentvalues = new ContentValues();
+                contentvalues.put("vehicleno","abcd");
+                contentvalues.put("intime", "santhosh");
+                contentvalues.put("vehicletype",4);
+                contentvalues.put("outtime","123");
+                contentvalues.put("spacetaken",5);
 
+                long rowId = database.insert("checkin",null, contentvalues);
 
-                long rowId = database.insert(tableschema.TABLE_NAME,null, contentValues);
                 Log.v("check", "data acquired");
-                Toast.makeText(MainActivity.this, "Data Acquired",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Data Acquired"+rowId,Toast.LENGTH_SHORT).show();
 
 
             }
